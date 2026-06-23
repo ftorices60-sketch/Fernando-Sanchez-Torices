@@ -638,11 +638,18 @@ transform: translateY(10px);
 
 /* Vision Cycle */
 .vision-container {
-  display: flex; align-items: center; justify-content: center; gap: 40px;
+  display: flex;
+  flex-direction: column; /* ✅ ESTE ES EL CAMBIO IMPORTANTE */
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
   width: 100%;
+  margin-top: 20px;
 }
+
 .vision-cycle {
-  position: relative; width: 280px; height: 280px; flex-shrink: 0;
+  width: 200px;
+  height: 200px;
 }
 .vision-center {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
