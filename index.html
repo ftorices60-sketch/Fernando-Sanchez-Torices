@@ -585,19 +585,19 @@ body {
 
 /* Process Diagram */
 .process-card {
-  padding: 22px 26px; height: 100%; display: flex; flex-direction: column;
+  padding: 30px 28px; height: 100%; display: flex; flex-direction: column;
 }
 .process-title {
   font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 14px;
 }
 .process-flow {
-  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
 }
 .process-node {
-  display: flex; align-items: center; gap: 10px; padding: 10px 18px;
+  display: flex; align-items: center; gap: 10px; padding: 14px 26px;
   border-radius: 10px; background: var(--bg-pearl);
   border: 1px solid rgba(199,21,133,0.1);
-  font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);
+  font-size: 0.9rem; font-weight: 600; color: var(--text-secondary);
   transition: all 0.4s ease; position: relative; min-width: 160px; justify-content: center;
    opacity: 0;
 transform: translateY(10px);
@@ -616,7 +616,7 @@ transform: translateY(10px);
 .process-node .pn-label { font-size: 0.78rem; }
 
 .process-arrow {
-  width: 2px; height: 14px;
+  width: 3px; height: 22px;
   background: linear-gradient(180deg, var(--magenta-light), var(--lavender));
   opacity: 0.4; position: relative;
 }
@@ -1284,14 +1284,26 @@ width: 95px;
       <div class="card process-card reveal reveal-delay-3">
         <div class="process-title">¿Por qué Planeación Comercial?</div>
 
-        <div class="process-flow">
-          <div class="process-node"><span>📊 Datos</span></div>
-          <div class="process-node"><span>📈 Demanda</span></div>
-          <div class="process-node"><span>📦 Inventario</span></div>
-          <div class="process-node"><span>🎯 Planeación</span></div>
-          <div class="process-node"><span>⚙️ Ejecución</span></div>
-          <div class="process-node"><span>🏆 Resultados</span></div>
-        </div>
+       <div class="process-flow">
+
+  <div class="process-node"><span>📊 Datos</span></div>
+  <div class="process-arrow"></div>
+
+  <div class="process-node"><span>📈 Demanda</span></div>
+  <div class="process-arrow"></div>
+
+  <div class="process-node"><span>📦 Inventario</span></div>
+  <div class="process-arrow"></div>
+
+  <div class="process-node"><span>🎯 Planeación</span></div>
+  <div class="process-arrow"></div>
+
+  <div class="process-node"><span>⚙️ Ejecución</span></div>
+  <div class="process-arrow"></div>
+
+  <div class="process-node"><span>🏆 Resultados</span></div>
+
+</div>
 <div class="process-metrics">
   <div class="metric">
     <span class="metric-number">+12%</span>
