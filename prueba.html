@@ -498,11 +498,14 @@ body {
 }
 
 /* Positioned on staircase — bottom-left to top-right, wide spread */
-.tl-pos-1 { left: 1%; top: 72%; }
-.tl-pos-2 { left: 21%; top: 56%; }
-.tl-pos-3 { left: 41%; top: 40%; }
-.tl-pos-4 { left: 61%; top: 24%; }
-.tl-pos-5 { left: 81%; top: 8%; }
+.tl-pos-1 { left: 15%; top: 72%; }
+.tl-pos-2 { left: 35%; top: 56%; }
+.tl-pos-3 { left: 55%; top: 40%; }
+.tl-pos-4 { left: 75%; top: 24%; }
+
+.tl-card {
+  transform: translateX(-50%);
+}
 
 /* Initial stacked position for animation */
 .tl-card.stacked { left: -2% !important; top: 50% !important; opacity: 0; transform: translateX(-30px); }
@@ -596,8 +599,14 @@ body {
   border: 1px solid rgba(199,21,133,0.1);
   font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);
   transition: all 0.4s ease; position: relative; min-width: 160px; justify-content: center;
+   opacity: 0;
+transform: translateY(10px);
 }
-.process-node:hover, .process-node.active {
+.process-node.active {
+  opacity: 1; /* ✅ aparece */
+  transform: translateY(0); /* ✅ sube suave */
+  transition: all 0.6s ease;
+
   background: linear-gradient(135deg, rgba(199,21,133,0.08), rgba(147,112,219,0.05));
   border-color: rgba(199,21,133,0.25);
   box-shadow: 0 4px 14px rgba(199,21,133,0.12);
@@ -621,7 +630,7 @@ body {
   position: absolute; width: 4px; height: 4px; border-radius: 50%;
   background: var(--magenta-glow); left: 50%; transform: translateX(-50%);
   box-shadow: 0 0 4px var(--magenta-glow);
-  animation: arrowParticle 2s ease-in-out infinite;
+  animation: none; /* ✅ YA NO PARPADEA */
 }
 @keyframes arrowParticle {
   0% { top: 0; opacity: 0; } 20%{opacity:1;} 80%{opacity:1;} 100%{top:100%;opacity:0;}
@@ -1680,24 +1689,13 @@ function selectTimelineCard(step) {
 // SLIDE 3 ANIMATIONS
 // ═════════════════════════════════════════════
 function animateSlide3() {
-  // Activate process nodes sequentially
   const nodes = document.querySelectorAll('.process-node');
+
   nodes.forEach((n, i) => {
     setTimeout(() => {
-      n.classList.add('active');
-      setTimeout(() => n.classList.remove('active'), 1200);
+      n.classList.add('active'); // ✅ solo se activa
     }, 300 + i * 400);
   });
-
-  // Loop process animation
-  setInterval(() => {
-    nodes.forEach((n, i) => {
-      setTimeout(() => {
-        n.classList.add('active');
-        setTimeout(() => n.classList.remove('active'), 1000);
-      }, i * 350);
-    });
-  }, 3500);
 }
 
 // ═════════════════════════════════════════════
