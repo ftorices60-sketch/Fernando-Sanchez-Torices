@@ -498,10 +498,10 @@ body {
 }
 
 /* Positioned on staircase — bottom-left to top-right, wide spread */
-.tl-pos-1 { left: 12%; top: 75%; }
-.tl-pos-2 { left: 36%; top: 58%; }
-.tl-pos-3 { left: 60%; top: 40%; }
-.tl-pos-4 { left: 88%; top: 20%; }
+.tl-pos-1 { left: 10%; top: 75%; }
+.tl-pos-2 { left: 32%; top: 58%; }
+.tl-pos-3 { left: 55%; top: 40%; }
+.tl-pos-4 { left: 78%; top: 20%; }
 
 .tl-card {
   transform: translateX(-50%);
@@ -572,7 +572,7 @@ body {
 
 /* Liverpool */
 .liverpool-card {
-  padding: 22px 26px; height: 100%; display: flex; flex-direction: column; gap: 12px;
+  padding: 22px 26px; height: 100%; display: flex; flex-direction: column; gap: 12px; overflow: hidden;
 }
 .liverpool-text {
   font-size: 0.82rem; line-height: 1.65; color: var(--text-secondary);
@@ -646,14 +646,17 @@ transform: translateY(10px);
   width: 100%;
   margin-top: 20px;
 }
-
 .vision-cycle {
-  width: 200px;
-  height: 200px;
+  position: relative;
+  width: 260px;
+  height: 260px;margin-top: 30px;
 }
 .vision-center {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 100px; height: 100px; border-radius: 50%;
+width: 95px;
+  height: 95px;
+  font-size: 0.7rem;
+ border-radius: 50%;
   background: linear-gradient(135deg, var(--magenta-primary), var(--lavender));
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 2px; color: white; font-weight: 700; font-size: 0.72rem;
@@ -677,7 +680,7 @@ transform: translateY(10px);
 
 /* Vision nodes at cardinal positions */
 .vision-node {
-  position: absolute; width: 80px; height: 80px; border-radius: 50%;
+  position: absolute; width: 70px; height: 70px; border-radius: 50%;
   background: var(--bg-white); border: 2px solid rgba(199,21,133,0.15);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 2px; font-size: 0.65rem; font-weight: 600; color: var(--text-secondary);
@@ -688,8 +691,8 @@ transform: translateY(10px);
   transform: scale(1.1); border-color: rgba(199,21,133,0.3);
   box-shadow: var(--shadow-medium);
 }
-.vision-node .vn-icon { font-size: 1.2rem; }
-.vision-node .vn-label { font-size: 0.6rem; text-align: center; line-height: 1.2; }
+.vision-node .vn-icon { font-size: 1.1rem; }
+.vision-node .vn-label { font-size: 0.55rem; text-align: center; line-height: 1.2; }
 
 .vn-top { top: 0; left: 50%; transform: translateX(-50%); animation: vnFloat 5s ease-in-out infinite; }
 .vn-right { top: 50%; right: 0; transform: translateY(-50%); animation: vnFloat 5.5s ease-in-out infinite 0.5s; }
@@ -752,7 +755,7 @@ transform: translateY(10px);
 
 /* Vision side info */
 .vision-info {
-  display: flex; flex-direction: column; gap: 16px; max-width: 280px;
+  display: flex; flex-direction: column; gap: 16px; max-width: 420px;
 }
 .vision-info-item {
   display: flex; align-items: flex-start; gap: 10px;
